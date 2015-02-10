@@ -227,6 +227,7 @@ public class EUExAudio extends EUExBase {
 					String tag = item.substring(0, item.indexOf(','));
 					if (tag.equals(inSoundID)) {
 						soundID = item.substring(item.indexOf(',') + 1,item.lastIndexOf(','));
+						stopFromSoundPool(new String[]{inSoundID});
 						int inStreamID=m_pfMusicPlayer.playSound(Integer.parseInt(soundID.trim()));
 						StringBuffer sb=new StringBuffer(item.substring(0,item.lastIndexOf(",")));
 						sb.append(","+inStreamID);
